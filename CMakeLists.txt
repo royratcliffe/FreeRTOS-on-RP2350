@@ -54,4 +54,3 @@ target_include_directories(FreeRTOS-on-RP2350 PRIVATE
 )
 
 pico_add_extra_outputs(FreeRTOS-on-RP2350)
-
