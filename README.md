@@ -19,6 +19,12 @@ The extension manages SDK and toolchain installation automatically.
 
 ## Building
 
+Initialise the FreeRTOS-Kernel submodule, if you haven't already:
+
+```sh
+git submodule update --init --recursive
+```
+
 ### Using VS Code
 
 Open the project in VS Code with the Raspberry Pi Pico extension installed. Use the **Compile Project** build task (`Ctrl+Shift+B`) to build.
