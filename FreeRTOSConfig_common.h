@@ -120,7 +120,7 @@
 #define configUSE_PASSIVE_IDLE_HOOK             0
 #endif
 
-/* RP2040 specific */
+/* RP2xxx specific */
 #define configSUPPORT_PICO_SYNC_INTEROP         1
 #define configSUPPORT_PICO_TIME_INTEROP         1
 
