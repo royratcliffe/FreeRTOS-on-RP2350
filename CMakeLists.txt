@@ -29,7 +29,16 @@ set(PICO_BOARD pico2 CACHE STRING "Board type")
 include(pico_sdk_import.cmake)
 
 # Pull in FreeRTOS-Kernel
-include(FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2350_ARM_NTZ/FreeRTOS_Kernel_import.cmake)
+set(FREERTOS_KERNEL_IMPORT_CMAKE
+    ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2350_ARM_NTZ/FreeRTOS_Kernel_import.cmake)
+if(EXISTS ${FREERTOS_KERNEL_IMPORT_CMAKE})
+    include(${FREERTOS_KERNEL_IMPORT_CMAKE})
+else()
+    message(FATAL_ERROR
+        "Missing FreeRTOS kernel import file: ${FREERTOS_KERNEL_IMPORT_CMAKE}\n"
+        "The FreeRTOS-Kernel submodule may not be initialised.\n"
+        "Run: git submodule update --init --recursive")
+endif()
 
 project(FreeRTOS-on-RP2350 C CXX ASM)
 
